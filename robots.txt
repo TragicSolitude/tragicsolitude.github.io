@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://tragicsolitude.github.io/sitemap.xml

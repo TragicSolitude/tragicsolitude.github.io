@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="with=device-width, initial-scale=1">
+        <title>In The Void - The Computers That Put the Man on the Moon</title>
+        <link   rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles.css">
+        <link   rel="shortcut icon"
+                type="image/x-icon"
+                href="favicon.ico">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">In The Void</a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/blog">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container py-sm-3">
+            <h1 class="display-4">Apollo Guidance Computer</h1>
+            <p class="lead">
+                Portable computing
+            </p>
+            <div class="content-container mt-5 mx-auto">
+                <!-- TODO: Lead Image -->
+                <p><img src="/1452191063578451.jpg" alt="Control" />
+<em>Mission Control Image: NASA</em></p>
+<h3 id="architecture">Architecture</h3>
+<p>The apollo guidance computer was one of the computers used for the duration of
+the mission. This computer was mounted to the spacecraft, it aided the
+astronauts in piloting and operating the spacecraft to the Moon's surface and
+back. Its purpose at the start of the program varied during development but its
+ultimate goal was to aid operation of the spacecraft and to return the
+spacecraft to earth safely. The rest of the spacecraft such as its position and
+navigation was calculated entirely on the ground computers and sent via radio.</p>
+<p>Among the computers on the ground in the control center there were 3 computers
+in the spacecraft. The command module had a computer running software that
+handled communication to ground, navigation to, and navigation from the moon.
+The lunar module had an identical computer running different software that was
+designed to land the module and return it to the command module in orbit. This
+module also had an abort computer that could backup the main computer in
+returning to the command module in case of a problem because the lunar module
+was not capable of being controlled from the ground.</p>
+<h3 id="memory">Memory</h3>
+<p>All of these operations were done with only 36K <em>words</em> of read-only memory and
+2K thousand words of read-write memory. Each word was only 6 bits so the total
+memory corresponds to about 27K bytes of read-only memory and 1.5K bytes of
+read-write memory. The amount that was done on only that much memory is
+impressive. Even more impressive is how far we have come. The high end of
+computers today can run up to 2 <em>trillion</em> bytes of RAM off of a single
+processor as well as nigh-infinite non-volatile storage. Not that modern
+concepts of RAM and storage even compare to what was used in the spacecraft. The
+AGC used core rope memory. In read-write memory each core can be magnetized in
+a particular direction to represent a bit state. In the read-only memory the
+data was <em>physically</em> built during construction of the memory.</p>
+<h3 id="user-interface">User Interface</h3>
+<p>Interfacing with the onboard computers was done through an aptly named <em>Display
+and Keyboard</em>.</p>
+<p><img src="/p54.jpg" alt="DSKY" /></p>
+<p><em>The Display and Keyboard (from Wichita State University Media Services)</em></p>
+<p>This display certainly deviates from modern sensibilities of intuitive user
+interface design and user experiences. Reference documentation is required to
+even understand what everything on here does. This is what the 10 warning lights
+on the left of the display are for (from <em>Computers On Board The Apollo
+Spacecraft</em>):</p>
+<ul>
+<li>COMP ACTY: This lit up when the computer was turning a program.</li>
+<li>UPLINK ACTY: Lit when data was being received from the ground.</li>
+<li>TEMP: Lit when the temperature of the stable platform was out of tolerance.</li>
+<li>NO ATT: Lit when the inertial subsystem could not provide attitude
+reference.</li>
+<li>GIMBAL LOCK: Lit when the middle gimbal angle was greater than 70 degrees.</li>
+<li>STBY: Lit when the computer system was on standby.</li>
+<li>PROG: Lit when the computer was waiting for additional information to be
+entered by the crew to complete the program.</li>
+<li>KEY REL: Lit when the computer needed control of the DSKY to complete a
+program. Sometimes display information could be &quot;buried&quot; under other
+routines or by a priority interrupt. The crew could press the KEY REL key to
+release the keyboard to the requesting program150. When the KEY REL light
+went on, that signaled the crew to press the key.</li>
+<li>RESTART: Lit when the computer was in the restart program. This was the
+light that kept coming on during the Apollo11 landing.</li>
+<li>OPR ERR: Lit when the computer detected an error on the keyboard.</li>
+<li>TRACKER: Lit when one of the optical coupling units failed.</li>
+</ul>
+<p>The digital displays on the display and keyboard are related to information
+about what the computer is currently running and the current input for
+controlling the computer. The input scheme follows suit with the physical design
+of the display and keyboard itself in its lack of intuitive design. According to
+astronaut feedback the system is very natural to use... after hours in
+simulators. The computer uses a verb-noun pair for input where the verb and noun
+are encoded to numbers. For example an input could be verb &quot;change&quot; and noun
+&quot;program&quot; for changing the program currently running.</p>
+<p>This system actually has modern counterparts in the form of Microsoft's
+PowerShell command line shell. Its programs follow the same pattern as a naming
+convention, albeit not numerically encoded. For example some built in commands
+include <code>Get-Item</code> for getting information about an item on the filesystem or
+<code>Remove-Item</code> for removing that item. It really is amazing how so much could be
+done through a computer with such a relatively small amount of memory, 19
+buttons, and 5 digital displays.</p>
+<h3 id="cooling">Cooling</h3>
+<p>Most terrestrial computers rely on some form of active convection to draw heat
+away from the electrical components that produce it. This is usually done via
+an array of aluminum or copper fins with air drawn through and away. There are
+many different methods of transporting the heat to these fins whether it be
+heat pipes, water pumped through tubes, or refrigerant run through a compressor.
+However this all relies on the presence of cool air. Beyond the atmosphere of
+earth there tends to be a lack of that particular resource but there are still
+many heat producing components and computers on spacecraft. So how is
+temperature regulated without air?</p>
+<p>For the lunar missions NASA used a liquid coolant loop that draws heat from all
+heat-producing components in the module. The coolant is a mix of ethylene-glycol
+(anti-freeze) and water. This coolant is then pumped to the <em>sublimators</em>. These
+are what pushes that heat from the module into space. This is cleverly done by
+pushing water through porous plates where, due to the drop in pressure from the
+vacuum of space, the water freezes into ice. The hot coolant is then pumped
+through passages in the plates where the heat is absorbed by the ice which
+promptly sublimates into steam, absorbing heat energy as it changes phases.</p>
+<h3 id="references">References</h3>
+<p>NASA. <em>Computers On Board The Apollo Spacecraft</em>. Computers in Spaceflight:
+The NASA Experience. <a href="https://history.nasa.gov/computers/Ch2-1.html">https://history.nasa.gov/computers/Ch2-1.html</a></p>
+<p><em>ECS Equipment - Heat Transport Section</em>. Apollo Lunar Space Journal.
+<a href="https://www.hq.nasa.gov/alsj/alsj-ECSEquipHeat.html">https://www.hq.nasa.gov/alsj/alsj-ECSEquipHeat.html</a></p>
+
+            </div>
+        </div>
+        <footer class="text-muted">
+            <div class="container py-5">
+                <p>
+                    Built by Noah Shuart in 2020 using
+                    <a href="https://getbootstrap.com/">Bootstrap 4</a>
+                    and <a href="https://www.getzola.org/">Zola static site
+                    generator</a>.
+                </p>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous">
+        </script>
+    </body>
+</html>
